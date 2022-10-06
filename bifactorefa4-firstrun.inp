@@ -1,0 +1,43 @@
+Title: IRT model for distress item bank
+
+data: file is datampls.csv;
+
+variable: names are contactid	m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+m0h1suic	m0h2lonely	m0h3sad	
+m0h4anhedonia	m0h5hopeless	m0h6worthless		
+m0k61	m0k62	m0k63	m0k64	m0k65	m0k66
+m0minisp1	m0minisp2	m0minisp3	
+m0phq1	m0phq2	
+m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+m0sd24	m0sd3	m0sd8;
+
+usevar are m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+m0h1suic	m0h2lonely	m0h3sad	
+m0h4anhedonia	m0h5hopeless	m0h6worthless		
+m0k61	m0k62	m0k63	m0k64	m0k65	m0k66	
+m0phq1	m0phq2	
+m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+m0sd24	m0sd3	m0sd8;
+
+idvariable is contactid;
+
+categorical are m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+m0h1suic	m0h2lonely	m0h3sad	
+m0h4anhedonia	m0h5hopeless	m0h6worthless		
+m0k61	m0k62	m0k63	m0k64	m0k65	m0k66	
+m0phq1	m0phq2	
+m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+m0sd24	m0sd3	m0sd8;
+
+missing is all(-9);
+
+analysis: estimator=mlr;
+        integration=montecarlo;
+        type is efa 4 4;
+        rotation=bi-geomin(orthogonal);
+        MCONVERGENCE=0.00001;
+
+output: sampstat; standardized; cinterval;

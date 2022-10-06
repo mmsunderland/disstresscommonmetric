@@ -1,0 +1,977 @@
+Mplus VERSION 8.8
+MUTHEN & MUTHEN
+09/30/2022   1:24 PM
+
+INPUT INSTRUCTIONS
+
+  Title: IRT model for distress item bank
+
+  data: file is datampls.csv;
+
+  variable: names are contactid	m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+  m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+  m0h1suic	m0h2lonely	m0h3sad	
+  m0h4anhedonia	m0h5hopeless	m0h6worthless		
+  m0k61	m0k62	m0k63	m0k64	m0k65	m0k66
+  m0minisp1	m0minisp2	m0minisp3	
+  m0phq1	m0phq2	
+  m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+  m0sd24	m0sd3	m0sd8;
+
+  usevar are m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+  m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+  m0h1suic	m0h2lonely	m0h3sad	
+  m0h4anhedonia	m0h5hopeless	m0h6worthless		
+  m0k61	m0k62	m0k63	m0k64	m0k65	m0k66	
+  m0phq1	m0phq2	
+  m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+  m0sd24	m0sd3	m0sd8;
+
+  idvariable is contactid;
+
+  categorical are m0chu1	m0chu2	m0chu3	m0chu4	m0chu5	m0chu6	
+  m0chu7	m0chu8	m0chu9	m0gad71	m0gad72	m0gad73	m0gad74	m0gad75	m0gad76	m0gad77	
+  m0h1suic	m0h2lonely	m0h3sad	
+  m0h4anhedonia	m0h5hopeless	m0h6worthless		
+  m0k61	m0k62	m0k63	m0k64	m0k65	m0k66	
+  m0phq1	m0phq2	
+  m0phq3	m0phq4	m0phq5	m0phq6	m0phq7	m0phq8	m0sd13	m0sd16	
+  m0sd24	m0sd3	m0sd8;
+
+  missing is all(-9);
+
+  analysis: estimator=mlr;
+          integration=montecarlo;
+          type is efa 4 4;
+          rotation=bi-geomin(orthogonal);
+          MCONVERGENCE=0.00001;
+
+  output: sampstat; standardized; cinterval;
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+*** WARNING in OUTPUT command
+  STANDARDIZED (STD, STDY, STDYX) options are not available for TYPE=EFA.
+  Request for STANDARDIZED options will be ignored.  Note that STANDARDIZED options
+  are available with the use of EFA factors (ESEM) declared in the MODEL command.
+*** WARNING in OUTPUT command
+  SAMPSTAT option is not available when all outcomes are censored, ordered
+  categorical, unordered categorical (nominal), count or continuous-time
+  survival variables.  Request for SAMPSTAT is ignored.
+*** WARNING in OUTPUT command
+  CINTERVAL option is available only with TYPE=GENERAL and TYPE=MIXTURE.
+  Request for CINTERVAL is ignored.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  265
+   5 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+IRT model for distress item bank
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        6595
+
+Number of dependent variables                                   41
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   M0CHU1      M0CHU2      M0CHU3      M0CHU4      M0CHU5      M0CHU6
+   M0CHU7      M0CHU8      M0CHU9      M0GAD71     M0GAD72     M0GAD73
+   M0GAD74     M0GAD75     M0GAD76     M0GAD77     M0H1SUIC    M0H2LONE
+   M0H3SAD     M0H4ANHE    M0H5HOPE    M0H6WORT    M0K61       M0K62
+   M0K63       M0K64       M0K65       M0K66       M0PHQ1      M0PHQ2
+   M0PHQ3      M0PHQ4      M0PHQ5      M0PHQ6      M0PHQ7      M0PHQ8
+   M0SD13      M0SD16      M0SD24      M0SD3       M0SD8
+
+Variables with special functions
+
+  ID variable           CONTACTI
+
+Estimator                                                      MLR
+Rotation                                                 BI-GEOMIN
+Row standardization                                    CORRELATION
+Type of rotation                                        ORTHOGONAL
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-02
+    Relative loglikelihood change                        0.100D-05
+    Derivative                                           0.100D-04
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization Specifications for the Exploratory Factor Analysis
+Rotation Algorithm
+  Number of random starts                                       30
+  Maximum number of iterations                               10000
+  Derivative convergence criterion                       0.100D-04
+Optimization algorithm                                         EMA
+Integration Specifications
+  Type                                                  MONTECARLO
+  Number of integration points                                4000
+  Dimensions of numerical integration                            4
+  Adaptive quadrature                                           ON
+  Monte Carlo integration seed                                   0
+Link                                                         LOGIT
+Cholesky                                                        ON
+
+Input data file(s)
+  datampls.csv
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            86
+     Number of y missing data patterns           0
+     Number of u missing data patterns          86
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR U
+
+
+           Covariance Coverage
+              M0CHU1        M0CHU2        M0CHU3        M0CHU4        M0CHU5
+              ________      ________      ________      ________      ________
+ M0CHU1         0.728
+ M0CHU2         0.727         0.728
+ M0CHU3         0.727         0.728         0.728
+ M0CHU4         0.727         0.728         0.728         0.728
+ M0CHU5         0.727         0.727         0.727         0.727         0.728
+ M0CHU6         0.727         0.727         0.727         0.727         0.727
+ M0CHU7         0.726         0.726         0.726         0.726         0.727
+ M0CHU8         0.727         0.727         0.727         0.727         0.727
+ M0CHU9         0.727         0.727         0.727         0.727         0.727
+ M0GAD71        0.726         0.726         0.726         0.726         0.726
+ M0GAD72        0.726         0.726         0.726         0.726         0.726
+ M0GAD73        0.726         0.726         0.726         0.726         0.726
+ M0GAD74        0.726         0.726         0.726         0.726         0.726
+ M0GAD75        0.725         0.725         0.725         0.725         0.725
+ M0GAD76        0.725         0.725         0.725         0.725         0.724
+ M0GAD77        0.725         0.726         0.726         0.726         0.725
+ M0H1SUIC       0.000         0.000         0.000         0.000         0.000
+ M0H2LONE       0.000         0.000         0.000         0.000         0.000
+ M0H3SAD        0.000         0.000         0.000         0.000         0.000
+ M0H4ANHE       0.000         0.000         0.000         0.000         0.000
+ M0H5HOPE       0.000         0.000         0.000         0.000         0.000
+ M0H6WORT       0.000         0.000         0.000         0.000         0.000
+ M0K61          0.726         0.727         0.726         0.726         0.726
+ M0K62          0.726         0.726         0.726         0.726         0.726
+ M0K63          0.725         0.725         0.725         0.725         0.725
+ M0K64          0.725         0.726         0.725         0.725         0.725
+ M0K65          0.725         0.725         0.725         0.725         0.725
+ M0K66          0.725         0.725         0.725         0.725         0.725
+ M0PHQ1         0.726         0.727         0.726         0.726         0.726
+ M0PHQ2         0.726         0.726         0.726         0.726         0.726
+ M0PHQ3         0.726         0.726         0.726         0.726         0.726
+ M0PHQ4         0.726         0.727         0.726         0.726         0.726
+ M0PHQ5         0.726         0.726         0.726         0.726         0.726
+ M0PHQ6         0.726         0.726         0.726         0.726         0.726
+ M0PHQ7         0.726         0.726         0.726         0.726         0.726
+ M0PHQ8         0.726         0.726         0.726         0.726         0.726
+ M0SD13         0.715         0.715         0.715         0.715         0.715
+ M0SD16         0.715         0.715         0.715         0.715         0.715
+ M0SD24         0.714         0.714         0.714         0.714         0.715
+ M0SD3          0.716         0.716         0.716         0.716         0.716
+ M0SD8          0.714         0.715         0.714         0.714         0.715
+
+
+           Covariance Coverage
+              M0CHU6        M0CHU7        M0CHU8        M0CHU9        M0GAD71
+              ________      ________      ________      ________      ________
+ M0CHU6         0.727
+ M0CHU7         0.727         0.727
+ M0CHU8         0.727         0.727         0.727
+ M0CHU9         0.727         0.727         0.727         0.727
+ M0GAD71        0.726         0.725         0.726         0.726         0.731
+ M0GAD72        0.726         0.725         0.725         0.726         0.731
+ M0GAD73        0.726         0.725         0.726         0.726         0.731
+ M0GAD74        0.725         0.725         0.725         0.725         0.731
+ M0GAD75        0.725         0.724         0.724         0.725         0.730
+ M0GAD76        0.724         0.724         0.724         0.724         0.730
+ M0GAD77        0.725         0.724         0.725         0.725         0.731
+ M0H1SUIC       0.000         0.000         0.000         0.000         0.000
+ M0H2LONE       0.000         0.000         0.000         0.000         0.000
+ M0H3SAD        0.000         0.000         0.000         0.000         0.000
+ M0H4ANHE       0.000         0.000         0.000         0.000         0.000
+ M0H5HOPE       0.000         0.000         0.000         0.000         0.000
+ M0H6WORT       0.000         0.000         0.000         0.000         0.000
+ M0K61          0.726         0.726         0.726         0.726         0.730
+ M0K62          0.726         0.725         0.726         0.726         0.730
+ M0K63          0.724         0.724         0.724         0.724         0.729
+ M0K64          0.725         0.725         0.725         0.725         0.729
+ M0K65          0.724         0.724         0.724         0.724         0.729
+ M0K66          0.725         0.724         0.725         0.725         0.729
+ M0PHQ1         0.726         0.726         0.726         0.726         0.731
+ M0PHQ2         0.726         0.725         0.726         0.726         0.730
+ M0PHQ3         0.726         0.725         0.725         0.726         0.730
+ M0PHQ4         0.726         0.726         0.726         0.726         0.730
+ M0PHQ5         0.726         0.726         0.726         0.726         0.730
+ M0PHQ6         0.726         0.725         0.726         0.726         0.730
+ M0PHQ7         0.726         0.726         0.726         0.726         0.730
+ M0PHQ8         0.726         0.726         0.726         0.726         0.730
+ M0SD13         0.715         0.715         0.715         0.715         0.714
+ M0SD16         0.715         0.715         0.715         0.715         0.715
+ M0SD24         0.714         0.714         0.714         0.714         0.714
+ M0SD3          0.716         0.716         0.716         0.716         0.716
+ M0SD8          0.715         0.714         0.714         0.715         0.714
+
+
+           Covariance Coverage
+              M0GAD72       M0GAD73       M0GAD74       M0GAD75       M0GAD76
+              ________      ________      ________      ________      ________
+ M0GAD72        0.731
+ M0GAD73        0.731         0.731
+ M0GAD74        0.731         0.731         0.731
+ M0GAD75        0.730         0.730         0.730         0.730
+ M0GAD76        0.730         0.730         0.730         0.729         0.730
+ M0GAD77        0.731         0.731         0.730         0.730         0.729
+ M0H1SUIC       0.000         0.000         0.000         0.000         0.000
+ M0H2LONE       0.000         0.000         0.000         0.000         0.000
+ M0H3SAD        0.000         0.000         0.000         0.000         0.000
+ M0H4ANHE       0.000         0.000         0.000         0.000         0.000
+ M0H5HOPE       0.000         0.000         0.000         0.000         0.000
+ M0H6WORT       0.000         0.000         0.000         0.000         0.000
+ M0K61          0.730         0.730         0.730         0.729         0.729
+ M0K62          0.730         0.730         0.729         0.729         0.728
+ M0K63          0.729         0.729         0.729         0.728         0.728
+ M0K64          0.729         0.729         0.729         0.728         0.728
+ M0K65          0.729         0.729         0.728         0.728         0.727
+ M0K66          0.729         0.729         0.729         0.728         0.728
+ M0PHQ1         0.731         0.731         0.730         0.730         0.729
+ M0PHQ2         0.730         0.730         0.730         0.729         0.729
+ M0PHQ3         0.730         0.730         0.730         0.729         0.729
+ M0PHQ4         0.730         0.731         0.730         0.730         0.729
+ M0PHQ5         0.730         0.731         0.730         0.729         0.729
+ M0PHQ6         0.730         0.730         0.730         0.729         0.729
+ M0PHQ7         0.730         0.730         0.730         0.729         0.729
+ M0PHQ8         0.730         0.731         0.730         0.730         0.729
+ M0SD13         0.714         0.714         0.714         0.713         0.713
+ M0SD16         0.714         0.715         0.714         0.714         0.713
+ M0SD24         0.714         0.714         0.714         0.713         0.713
+ M0SD3          0.715         0.716         0.715         0.714         0.714
+ M0SD8          0.714         0.714         0.714         0.713         0.713
+
+
+           Covariance Coverage
+              M0GAD77       M0H1SUIC      M0H2LONE      M0H3SAD       M0H4ANHE
+              ________      ________      ________      ________      ________
+ M0GAD77        0.731
+ M0H1SUIC       0.000         0.189
+ M0H2LONE       0.000         0.189         0.189
+ M0H3SAD        0.000         0.189         0.189         0.189
+ M0H4ANHE       0.000         0.189         0.189         0.189         0.189
+ M0H5HOPE       0.000         0.189         0.189         0.189         0.189
+ M0H6WORT       0.000         0.189         0.189         0.189         0.189
+ M0K61          0.730         0.189         0.189         0.189         0.189
+ M0K62          0.729         0.189         0.189         0.189         0.189
+ M0K63          0.728         0.189         0.189         0.189         0.189
+ M0K64          0.729         0.189         0.189         0.189         0.189
+ M0K65          0.728         0.189         0.189         0.189         0.189
+ M0K66          0.728         0.189         0.189         0.189         0.189
+ M0PHQ1         0.730         0.000         0.000         0.000         0.000
+ M0PHQ2         0.730         0.000         0.000         0.000         0.000
+ M0PHQ3         0.729         0.000         0.000         0.000         0.000
+ M0PHQ4         0.730         0.000         0.000         0.000         0.000
+ M0PHQ5         0.730         0.000         0.000         0.000         0.000
+ M0PHQ6         0.729         0.000         0.000         0.000         0.000
+ M0PHQ7         0.730         0.000         0.000         0.000         0.000
+ M0PHQ8         0.730         0.000         0.000         0.000         0.000
+ M0SD13         0.714         0.189         0.189         0.189         0.189
+ M0SD16         0.714         0.189         0.189         0.189         0.189
+ M0SD24         0.713         0.189         0.189         0.189         0.189
+ M0SD3          0.715         0.189         0.189         0.189         0.189
+ M0SD8          0.714         0.189         0.189         0.189         0.189
+
+
+           Covariance Coverage
+              M0H5HOPE      M0H6WORT      M0K61         M0K62         M0K63
+              ________      ________      ________      ________      ________
+ M0H5HOPE       0.189
+ M0H6WORT       0.189         0.189
+ M0K61          0.189         0.189         0.999
+ M0K62          0.189         0.189         0.998         0.998
+ M0K63          0.189         0.189         0.997         0.996         0.997
+ M0K64          0.189         0.189         0.997         0.997         0.996
+ M0K65          0.189         0.189         0.997         0.997         0.996
+ M0K66          0.189         0.189         0.997         0.997         0.995
+ M0PHQ1         0.000         0.000         0.735         0.735         0.734
+ M0PHQ2         0.000         0.000         0.735         0.734         0.734
+ M0PHQ3         0.000         0.000         0.735         0.734         0.733
+ M0PHQ4         0.000         0.000         0.735         0.735         0.734
+ M0PHQ5         0.000         0.000         0.735         0.734         0.734
+ M0PHQ6         0.000         0.000         0.735         0.734         0.733
+ M0PHQ7         0.000         0.000         0.735         0.735         0.733
+ M0PHQ8         0.000         0.000         0.735         0.734         0.733
+ M0SD13         0.189         0.189         0.905         0.904         0.903
+ M0SD16         0.189         0.189         0.905         0.904         0.903
+ M0SD24         0.189         0.189         0.904         0.904         0.903
+ M0SD3          0.189         0.189         0.906         0.905         0.904
+ M0SD8          0.189         0.189         0.904         0.904         0.903
+
+
+           Covariance Coverage
+              M0K64         M0K65         M0K66         M0PHQ1        M0PHQ2
+              ________      ________      ________      ________      ________
+ M0K64          0.998
+ M0K65          0.996         0.997
+ M0K66          0.996         0.996         0.997
+ M0PHQ1         0.734         0.734         0.734         0.736
+ M0PHQ2         0.734         0.733         0.734         0.735         0.736
+ M0PHQ3         0.734         0.733         0.733         0.735         0.735
+ M0PHQ4         0.734         0.734         0.734         0.736         0.735
+ M0PHQ5         0.734         0.733         0.734         0.736         0.735
+ M0PHQ6         0.734         0.733         0.733         0.735         0.735
+ M0PHQ7         0.734         0.733         0.734         0.735         0.735
+ M0PHQ8         0.734         0.733         0.734         0.735         0.735
+ M0SD13         0.904         0.903         0.904         0.715         0.715
+ M0SD16         0.904         0.903         0.904         0.715         0.715
+ M0SD24         0.904         0.903         0.903         0.714         0.714
+ M0SD3          0.905         0.904         0.905         0.716         0.716
+ M0SD8          0.903         0.903         0.903         0.715         0.714
+
+
+           Covariance Coverage
+              M0PHQ3        M0PHQ4        M0PHQ5        M0PHQ6        M0PHQ7
+              ________      ________      ________      ________      ________
+ M0PHQ3         0.736
+ M0PHQ4         0.735         0.736
+ M0PHQ5         0.735         0.735         0.736
+ M0PHQ6         0.735         0.735         0.735         0.736
+ M0PHQ7         0.735         0.735         0.735         0.735         0.736
+ M0PHQ8         0.735         0.735         0.735         0.735         0.735
+ M0SD13         0.714         0.715         0.715         0.714         0.715
+ M0SD16         0.714         0.715         0.715         0.715         0.715
+ M0SD24         0.714         0.714         0.714         0.714         0.714
+ M0SD3          0.715         0.716         0.716         0.716         0.716
+ M0SD8          0.714         0.714         0.714         0.714         0.714
+
+
+           Covariance Coverage
+              M0PHQ8        M0SD13        M0SD16        M0SD24        M0SD3
+              ________      ________      ________      ________      ________
+ M0PHQ8         0.736
+ M0SD13         0.715         0.906
+ M0SD16         0.715         0.905         0.906
+ M0SD24         0.714         0.904         0.905         0.905
+ M0SD3          0.716         0.905         0.906         0.905         0.907
+ M0SD8          0.714         0.904         0.904         0.904         0.905
+
+
+           Covariance Coverage
+              M0SD8
+              ________
+ M0SD8          0.906
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    M0CHU1
+      Category 1    0.685         3287.000
+      Category 2    0.201          962.000
+      Category 3    0.064          308.000
+      Category 4    0.030          143.000
+      Category 5    0.020           98.000
+    M0CHU2
+      Category 1    0.763         3661.000
+      Category 2    0.130          624.000
+      Category 3    0.049          237.000
+      Category 4    0.036          172.000
+      Category 5    0.022          106.000
+    M0CHU3
+      Category 1    0.686         3292.000
+      Category 2    0.187          896.000
+      Category 3    0.074          355.000
+      Category 4    0.033          156.000
+      Category 5    0.021          100.000
+    M0CHU4
+      Category 1    0.244         1173.000
+      Category 2    0.359         1723.000
+      Category 3    0.173          828.000
+      Category 4    0.127          611.000
+      Category 5    0.097          464.000
+    M0CHU5
+      Category 1    0.658         3157.000
+      Category 2    0.202          971.000
+      Category 3    0.069          329.000
+      Category 4    0.039          185.000
+      Category 5    0.033          156.000
+    M0CHU6
+      Category 1    0.584         2803.000
+      Category 2    0.271         1302.000
+      Category 3    0.096          460.000
+      Category 4    0.033          157.000
+      Category 5    0.016           75.000
+    M0CHU7
+      Category 1    0.559         2679.000
+      Category 2    0.243         1164.000
+      Category 3    0.110          529.000
+      Category 4    0.056          270.000
+      Category 5    0.032          152.000
+    M0CHU8
+      Category 1    0.796         3818.000
+      Category 2    0.136          654.000
+      Category 3    0.040          194.000
+      Category 4    0.018           86.000
+      Category 5    0.009           44.000
+    M0CHU9
+      Category 1    0.734         3523.000
+      Category 2    0.156          749.000
+      Category 3    0.051          244.000
+      Category 4    0.041          199.000
+      Category 5    0.017           82.000
+    M0GAD71
+      Category 1    0.638         3076.000
+      Category 2    0.292         1406.000
+      Category 3    0.045          219.000
+      Category 4    0.025          122.000
+    M0GAD72
+      Category 1    0.737         3554.000
+      Category 2    0.182          877.000
+      Category 3    0.050          242.000
+      Category 4    0.031          150.000
+    M0GAD73
+      Category 1    0.594         2865.000
+      Category 2    0.292         1407.000
+      Category 3    0.069          335.000
+      Category 4    0.045          217.000
+    M0GAD74
+      Category 1    0.663         3196.000
+      Category 2    0.239         1153.000
+      Category 3    0.056          268.000
+      Category 4    0.043          205.000
+    M0GAD75
+      Category 1    0.745         3591.000
+      Category 2    0.174          839.000
+      Category 3    0.049          234.000
+      Category 4    0.032          153.000
+    M0GAD76
+      Category 1    0.504         2426.000
+      Category 2    0.340         1635.000
+      Category 3    0.091          436.000
+      Category 4    0.066          317.000
+    M0GAD77
+      Category 1    0.669         3225.000
+      Category 2    0.215         1034.000
+      Category 3    0.060          289.000
+      Category 4    0.056          271.000
+    M0H1SUIC
+      Category 1    0.761          949.000
+      Category 2    0.156          195.000
+      Category 3    0.035           44.000
+      Category 4    0.028           35.000
+      Category 5    0.019           24.000
+    M0H2LONE
+      Category 1    0.540          674.000
+      Category 2    0.313          390.000
+      Category 3    0.080          100.000
+      Category 4    0.040           50.000
+      Category 5    0.026           33.000
+    M0H3SAD
+      Category 1    0.402          501.000
+      Category 2    0.404          504.000
+      Category 3    0.114          142.000
+      Category 4    0.043           54.000
+      Category 5    0.037           46.000
+    M0H4ANHE
+      Category 1    0.561          700.000
+      Category 2    0.279          348.000
+      Category 3    0.097          121.000
+      Category 4    0.036           45.000
+      Category 5    0.026           33.000
+    M0H5HOPE
+      Category 1    0.687          857.000
+      Category 2    0.204          255.000
+      Category 3    0.059           74.000
+      Category 4    0.022           28.000
+      Category 5    0.026           33.000
+    M0H6WORT
+      Category 1    0.727          907.000
+      Category 2    0.163          203.000
+      Category 3    0.063           79.000
+      Category 4    0.022           27.000
+      Category 5    0.025           31.000
+    M0K61
+      Category 1    0.176         1162.000
+      Category 2    0.493         3248.000
+      Category 3    0.238         1567.000
+      Category 4    0.066          435.000
+      Category 5    0.027          175.000
+    M0K62
+      Category 1    0.512         3368.000
+      Category 2    0.286         1885.000
+      Category 3    0.125          823.000
+      Category 4    0.050          327.000
+      Category 5    0.027          180.000
+    M0K63
+      Category 1    0.284         1868.000
+      Category 2    0.320         2106.000
+      Category 3    0.246         1617.000
+      Category 4    0.103          676.000
+      Category 5    0.047          308.000
+    M0K64
+      Category 1    0.683         4496.000
+      Category 2    0.181         1193.000
+      Category 3    0.078          514.000
+      Category 4    0.036          240.000
+      Category 5    0.021          136.000
+    M0K65
+      Category 1    0.349         2294.000
+      Category 2    0.304         2001.000
+      Category 3    0.185         1214.000
+      Category 4    0.104          686.000
+      Category 5    0.058          381.000
+    M0K66
+      Category 1    0.646         4246.000
+      Category 2    0.193         1270.000
+      Category 3    0.082          538.000
+      Category 4    0.046          303.000
+      Category 5    0.033          220.000
+    M0PHQ1
+      Category 1    0.689         3344.000
+      Category 2    0.234         1138.000
+      Category 3    0.042          203.000
+      Category 4    0.035          171.000
+    M0PHQ2
+      Category 1    0.597         2899.000
+      Category 2    0.286         1386.000
+      Category 3    0.080          390.000
+      Category 4    0.037          178.000
+    M0PHQ3
+      Category 1    0.471         2286.000
+      Category 2    0.311         1507.000
+      Category 3    0.114          552.000
+      Category 4    0.104          506.000
+    M0PHQ4
+      Category 1    0.739         3588.000
+      Category 2    0.160          779.000
+      Category 3    0.058          283.000
+      Category 4    0.042          204.000
+    M0PHQ5
+      Category 1    0.387         1877.000
+      Category 2    0.416         2017.000
+      Category 3    0.113          550.000
+      Category 4    0.084          410.000
+    M0PHQ6
+      Category 1    0.689         3344.000
+      Category 2    0.200          968.000
+      Category 3    0.062          299.000
+      Category 4    0.050          241.000
+    M0PHQ7
+      Category 1    0.622         3018.000
+      Category 2    0.263         1274.000
+      Category 3    0.075          362.000
+      Category 4    0.041          199.000
+    M0PHQ8
+      Category 1    0.797         3868.000
+      Category 2    0.138          668.000
+      Category 3    0.041          197.000
+      Category 4    0.025          119.000
+    M0SD13
+      Category 1    0.759         4536.000
+      Category 2    0.184         1098.000
+      Category 3    0.057          340.000
+    M0SD16
+      Category 1    0.441         2636.000
+      Category 2    0.406         2426.000
+      Category 3    0.153          913.000
+    M0SD24
+      Category 1    0.629         3753.000
+      Category 2    0.284         1698.000
+      Category 3    0.087          519.000
+    M0SD3
+      Category 1    0.655         3920.000
+      Category 2    0.264         1579.000
+      Category 3    0.081          483.000
+    M0SD8
+      Category 1    0.552         3299.000
+      Category 2    0.325         1939.000
+      Category 3    0.123          734.000
+
+
+
+RESULTS FOR EXPLORATORY FACTOR ANALYSIS
+
+
+EXPLORATORY FACTOR ANALYSIS WITH 4 FACTOR(S):
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                      297
+
+Loglikelihood
+
+          H0 Value                     -152942.111
+          H0 Scaling Correction Factor      1.2101
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                  306478.223
+          Bayesian (BIC)                308496.061
+          Sample-Size Adjusted BIC      307552.269
+            (n* = (n + 2) / 24)
+
+
+
+MINIMUM ROTATION FUNCTION VALUE       1.22582
+
+
+
+           BI-GEOMIN ROTATED LOADINGS (* significant at 5% level)
+                  1             2             3             4
+              ________      ________      ________      ________
+ M0CHU1         0.743*        0.024        -0.017        -0.254*
+ M0CHU2         0.791*        0.227*        0.080*       -0.187*
+ M0CHU3         0.606*        0.198*       -0.034         0.026
+ M0CHU4         0.630*        0.227*       -0.150*        0.130*
+ M0CHU5         0.682*        0.203*        0.003        -0.045
+ M0CHU6         0.614*        0.198*       -0.083*        0.076
+ M0CHU7         0.667*        0.223*       -0.204*        0.171*
+ M0CHU8         0.707*        0.283*       -0.090*        0.008
+ M0CHU9         0.674*        0.203*       -0.042        -0.095
+ M0GAD71        0.785*       -0.308*        0.031         0.009
+ M0GAD72        0.848*       -0.359*        0.007        -0.057
+ M0GAD73        0.821*       -0.352*       -0.009        -0.045
+ M0GAD74        0.809*       -0.162*       -0.067*        0.161*
+ M0GAD75        0.714*       -0.156*       -0.072*        0.326*
+ M0GAD76        0.747*       -0.106*       -0.010         0.205*
+ M0GAD77        0.789*       -0.197*        0.028        -0.025
+ M0H1SUIC       0.660*        0.420*        0.143*       -0.129
+ M0H2LONE       0.798*        0.370*       -0.032        -0.127
+ M0H3SAD        0.797*        0.442*       -0.074        -0.087
+ M0H4ANHE       0.701*        0.433*        0.001         0.143*
+ M0H5HOPE       0.781*        0.398*        0.171*        0.020
+ M0H6WORT       0.817*        0.426*        0.241*       -0.071
+ M0K61          0.658*       -0.143*        0.165*        0.026
+ M0K62          0.754*        0.016         0.471*        0.009
+ M0K63          0.577*       -0.040         0.089*        0.290*
+ M0K64          0.756*        0.060*        0.431*       -0.001
+ M0K65          0.562*        0.010         0.227*        0.224*
+ M0K66          0.769*        0.071*        0.515*        0.004
+ M0PHQ1         0.827*       -0.083*        0.301*        0.028
+ M0PHQ2         0.630*       -0.088*        0.095*        0.217*
+ M0PHQ3         0.713*        0.021        -0.117*        0.303*
+ M0PHQ4         0.701*       -0.032         0.027         0.228*
+ M0PHQ5         0.700*       -0.021        -0.064*        0.296*
+ M0PHQ6         0.804*       -0.088*        0.286*        0.059
+ M0PHQ7         0.729*       -0.040        -0.002         0.314*
+ M0PHQ8         0.727*       -0.118*        0.011         0.338*
+ M0SD13         0.763*        0.045         0.130*       -0.243*
+ M0SD16         0.566*       -0.141*       -0.037        -0.205*
+ M0SD24         0.518*       -0.145*       -0.026        -0.271*
+ M0SD3          0.592*       -0.016        -0.066*       -0.065
+ M0SD8          0.709*       -0.244*       -0.062*       -0.317*
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0CHU1        M0CHU2        M0CHU3        M0CHU4        M0CHU5
+              ________      ________      ________      ________      ________
+                0.382         0.282         0.591         0.512         0.492
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0CHU6        M0CHU7        M0CHU8        M0CHU9        M0GAD71
+              ________      ________      ________      ________      ________
+                0.571         0.434         0.412         0.493         0.289
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0GAD72       M0GAD73       M0GAD74       M0GAD75       M0GAD76
+              ________      ________      ________      ________      ________
+                0.148         0.200         0.288         0.354         0.389
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0GAD77       M0H1SUIC      M0H2LONE      M0H3SAD       M0H4ANHE
+              ________      ________      ________      ________      ________
+                0.336         0.351         0.210         0.157         0.300
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0H5HOPE      M0H6WORT      M0K61         M0K62         M0K63
+              ________      ________      ________      ________      ________
+                0.202         0.088         0.518         0.210         0.573
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0K64         M0K65         M0K66         M0PHQ1        M0PHQ2
+              ________      ________      ________      ________      ________
+                0.239         0.582         0.139         0.217         0.540
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0PHQ3        M0PHQ4        M0PHQ5        M0PHQ6        M0PHQ7
+              ________      ________      ________      ________      ________
+                0.386         0.455         0.417         0.260         0.369
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0PHQ8        M0SD13        M0SD16        M0SD24        M0SD3
+              ________      ________      ________      ________      ________
+                0.343         0.340         0.617         0.636         0.641
+
+
+           ESTIMATED RESIDUAL VARIANCES
+              M0SD8
+              ________
+                0.334
+
+
+           S.E. BI-GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ M0CHU1         0.018         0.096         0.039         0.038
+ M0CHU2         0.016         0.060         0.037         0.078
+ M0CHU3         0.016         0.034         0.032         0.054
+ M0CHU4         0.015         0.036         0.035         0.057
+ M0CHU5         0.015         0.049         0.032         0.053
+ M0CHU6         0.015         0.038         0.031         0.050
+ M0CHU7         0.016         0.043         0.038         0.060
+ M0CHU8         0.017         0.055         0.040         0.063
+ M0CHU9         0.016         0.059         0.032         0.054
+ M0GAD71        0.020         0.042         0.022         0.041
+ M0GAD72        0.022         0.058         0.026         0.048
+ M0GAD73        0.022         0.054         0.024         0.048
+ M0GAD74        0.013         0.034         0.020         0.031
+ M0GAD75        0.017         0.039         0.026         0.040
+ M0GAD76        0.013         0.025         0.019         0.026
+ M0GAD77        0.016         0.042         0.017         0.030
+ M0H1SUIC       0.039         0.055         0.055         0.071
+ M0H2LONE       0.037         0.075         0.052         0.089
+ M0H3SAD        0.037         0.071         0.050         0.101
+ M0H4ANHE       0.042         0.047         0.045         0.053
+ M0H5HOPE       0.035         0.050         0.047         0.041
+ M0H6WORT       0.035         0.051         0.050         0.040
+ M0K61          0.018         0.045         0.030         0.032
+ M0K62          0.014         0.032         0.022         0.015
+ M0K63          0.016         0.032         0.033         0.032
+ M0K64          0.012         0.028         0.020         0.024
+ M0K65          0.016         0.023         0.027         0.020
+ M0K66          0.013         0.028         0.020         0.019
+ M0PHQ1         0.010         0.026         0.019         0.030
+ M0PHQ2         0.016         0.031         0.022         0.030
+ M0PHQ3         0.014         0.034         0.029         0.037
+ M0PHQ4         0.015         0.030         0.025         0.036
+ M0PHQ5         0.014         0.033         0.027         0.036
+ M0PHQ6         0.012         0.025         0.020         0.034
+ M0PHQ7         0.014         0.036         0.023         0.031
+ M0PHQ8         0.016         0.039         0.023         0.031
+ M0SD13         0.014         0.062         0.026         0.040
+ M0SD16         0.019         0.062         0.024         0.041
+ M0SD24         0.021         0.069         0.023         0.045
+ M0SD3          0.016         0.041         0.023         0.036
+ M0SD8          0.024         0.086         0.026         0.048
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0CHU1        M0CHU2        M0CHU3        M0CHU4        M0CHU5
+              ________      ________      ________      ________      ________
+                0.020         0.017         0.021         0.020         0.022
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0CHU6        M0CHU7        M0CHU8        M0CHU9        M0GAD71
+              ________      ________      ________      ________      ________
+                0.021         0.022         0.025         0.023         0.015
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0GAD72       M0GAD73       M0GAD74       M0GAD75       M0GAD76
+              ________      ________      ________      ________      ________
+                0.013         0.013         0.014         0.019         0.018
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0GAD77       M0H1SUIC      M0H2LONE      M0H3SAD       M0H4ANHE
+              ________      ________      ________      ________      ________
+                0.017         0.036         0.023         0.020         0.043
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0H5HOPE      M0H6WORT      M0K61         M0K62         M0K63
+              ________      ________      ________      ________      ________
+                0.024         0.017         0.015         0.013         0.018
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0K64         M0K65         M0K66         M0PHQ1        M0PHQ2
+              ________      ________      ________      ________      ________
+                0.014         0.016         0.010         0.015         0.024
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0PHQ3        M0PHQ4        M0PHQ5        M0PHQ6        M0PHQ7
+              ________      ________      ________      ________      ________
+                0.019         0.024         0.022         0.017         0.021
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0PHQ8        M0SD13        M0SD16        M0SD24        M0SD3
+              ________      ________      ________      ________      ________
+                0.021         0.017         0.019         0.021         0.018
+
+
+           S.E. ESTIMATED RESIDUAL VARIANCES
+              M0SD8
+              ________
+                0.021
+
+
+           Est./S.E. BI-GEOMIN ROTATED LOADINGS
+                  1             2             3             4
+              ________      ________      ________      ________
+ M0CHU1        42.061         0.249        -0.442        -6.625
+ M0CHU2        48.985         3.806         2.154        -2.388
+ M0CHU3        36.866         5.814        -1.049         0.483
+ M0CHU4        40.967         6.382        -4.244         2.292
+ M0CHU5        45.686         4.187         0.093        -0.834
+ M0CHU6        39.659         5.175        -2.685         1.507
+ M0CHU7        41.287         5.171        -5.402         2.825
+ M0CHU8        41.053         5.168        -2.263         0.135
+ M0CHU9        43.234         3.476        -1.293        -1.771
+ M0GAD71       39.271        -7.337         1.463         0.226
+ M0GAD72       38.159        -6.226         0.264        -1.190
+ M0GAD73       37.612        -6.463        -0.369        -0.932
+ M0GAD74       60.550        -4.831        -3.410         5.142
+ M0GAD75       41.317        -3.979        -2.784         8.139
+ M0GAD76       56.885        -4.225        -0.507         8.013
+ M0GAD77       49.291        -4.688         1.657        -0.846
+ M0H1SUIC      16.826         7.668         2.598        -1.820
+ M0H2LONE      21.785         4.902        -0.618        -1.424
+ M0H3SAD       21.466         6.237        -1.465        -0.868
+ M0H4ANHE      16.705         9.158         0.022         2.725
+ M0H5HOPE      22.128         7.918         3.602         0.493
+ M0H6WORT      23.148         8.289         4.869        -1.771
+ M0K61         36.621        -3.170         5.602         0.827
+ M0K62         55.380         0.496        21.446         0.619
+ M0K63         35.149        -1.253         2.719         9.035
+ M0K64         60.479         2.154        21.645        -0.056
+ M0K65         35.014         0.438         8.365        11.426
+ M0K66         60.182         2.534        25.991         0.193
+ M0PHQ1        79.265        -3.180        16.150         0.952
+ M0PHQ2        40.228        -2.832         4.368         7.170
+ M0PHQ3        50.913         0.617        -3.974         8.210
+ M0PHQ4        47.793        -1.074         1.110         6.432
+ M0PHQ5        49.781        -0.627        -2.350         8.203
+ M0PHQ6        68.823        -3.568        14.351         1.743
+ M0PHQ7        53.231        -1.119        -0.068        10.144
+ M0PHQ8        46.242        -3.013         0.486        11.081
+ M0SD13        52.662         0.720         5.006        -6.040
+ M0SD16        29.309        -2.278        -1.557        -4.994
+ M0SD24        24.853        -2.111        -1.096        -6.008
+ M0SD3         37.840        -0.390        -2.846        -1.803
+ M0SD8         29.347        -2.837        -2.413        -6.559
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0CHU1        M0CHU2        M0CHU3        M0CHU4        M0CHU5
+              ________      ________      ________      ________      ________
+               19.209        17.067        28.719        25.855        22.498
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0CHU6        M0CHU7        M0CHU8        M0CHU9        M0GAD71
+              ________      ________      ________      ________      ________
+               27.025        19.468        16.319        21.263        18.875
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0GAD72       M0GAD73       M0GAD74       M0GAD75       M0GAD76
+              ________      ________      ________      ________      ________
+               11.192        15.276        19.962        18.224        21.763
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0GAD77       M0H1SUIC      M0H2LONE      M0H3SAD       M0H4ANHE
+              ________      ________      ________      ________      ________
+               20.301         9.796         9.151         7.839         6.997
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0H5HOPE      M0H6WORT      M0K61         M0K62         M0K63
+              ________      ________      ________      ________      ________
+                8.386         5.087        34.619        15.770        31.701
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0K64         M0K65         M0K66         M0PHQ1        M0PHQ2
+              ________      ________      ________      ________      ________
+               17.109        36.200        13.423        14.330        22.689
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0PHQ3        M0PHQ4        M0PHQ5        M0PHQ6        M0PHQ7
+              ________      ________      ________      ________      ________
+               20.500        18.956        19.347        14.878        17.374
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0PHQ8        M0SD13        M0SD16        M0SD24        M0SD3
+              ________      ________      ________      ________      ________
+               16.447        19.861        31.668        30.172        35.665
+
+
+           Est./S.E. ESTIMATED RESIDUAL VARIANCES
+              M0SD8
+              ________
+               16.062
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for EFA.
+  No diagram output was produced.
+
+
+     Beginning Time:  13:24:45
+        Ending Time:  16:44:20
+       Elapsed Time:  03:19:35
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2022 Muthen & Muthen
